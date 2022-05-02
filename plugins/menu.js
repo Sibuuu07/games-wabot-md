@@ -31,27 +31,28 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-╭─「 %me 🤖」
-│ 👋🏻 Hi, %name!
-│
-│ 🧱 Limit : *%limit Limit*
-│ 🦸🏼‍♂️ Role : *%role*
-│ 🔼 Level : *%level (%exp / %maxexp)*
-│ 💫 Total XP : %totalexp ✨
-│ 
-│ 📅 Date: *%week, %date*
-│ 🕰️ Time: *%time*
-│
-│ 📈 Uptime: *%uptime (%muptime)*
-│ 📊 Database: %rtotalreg of %totalreg
-╰────
+╭─━━━❰ 𝐀𝐑𝐂𝐓𝐈𝐗 𝐁𝐎𝐓 𝐈𝐍𝐂❱
+┃ 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 𝐀𝐑𝐂𝐓𝐈𝐗 𝐁𝐎𝐓
+┖━━━━━━━━━━━━━━━⦂
+╭━━━━❰ 𝗨𝗦𝗘𝗥 ❱
+┃ 🗿 𝗟𝗜𝗠𝗜𝗧 : *%limit Limit*
+┃ 🗿 𝗥𝗢𝗟𝗘 : *%role*
+┃ 🗿 𝗟𝗘𝗩𝗘𝗟 : *%level (%exp / %maxexp)*
+┃ 🗿 𝗧𝗢𝗧𝗔𝗟 𝗫𝗣 : %totalexp ✨
+┃ 
+┃ 🌍 𝗗𝗔𝗧𝗘: *%date*
+┃ 🌍 𝗧𝗜𝗠𝗘: *%time*
+┃
+┃ 🎲 𝗨𝗣𝗧𝗜𝗠𝗘: *%uptime (%muptime)*
+┃ 🎲 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘: %rtotalreg of %totalreg
+┗━━━━━━━━━━━━━━━━⦂
 %readmore`.trimStart(),
-  header: '╭─「 %category 」',
-  body: '│ •🧧%cmd %islimit %isPremium',
-  footer: '╰────\n',
+  header: '╭━━━❰ %category ❱',
+  body: '┃ ⚜️ %cmd %islimit %isPremium',
+  footer: '╰━━━━━━━⦂\n',
   after: `
-*%npmname* | %version
-${'```%npmdesc```'}
+𝐀𝐑𝐂𝐓𝐈𝐗 𝐁𝐎𝐓 𝐈𝐍𝐂 |©𝐒𝐢𝐛𝐬𝐬𝐬𝐬𝐬𝐬𝐬𝐬
+
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
@@ -67,11 +68,12 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     // Offset    0 is  0.00
     // Offset  420 is  7.00
     let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
-    let week = d.toLocaleDateString(locale, { weekday: 'long' })
+    let week = d.toLocaleDateString(locale, { weekday: 'long', timeZone: 'Asia/Kolkata' })
     let date = d.toLocaleDateString(locale, {
       day: 'numeric',
       month: 'long',
       year: 'numeric'
+      timeZone: 'Asia/Kolkata'
     })
     let dateIslamic = Intl.DateTimeFormat(locale + '-TN-u-ca-islamic', {
       day: 'numeric',
@@ -82,6 +84,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       hour: 'numeric',
       minute: 'numeric',
       second: 'numeric'
+      timeZone: 'Asia/Kolkata'
     })
     let _uptime = process.uptime() * 1000
     let _muptime
@@ -157,7 +160,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       ['Owner', '/owner']
     ], m)
   } catch (e) {
-    conn.reply(m.chat, 'Maaf, menu sedang error', m)
+    conn.reply(m.chat, 'My friend, menu  error', m)
     throw e
   }
 }
