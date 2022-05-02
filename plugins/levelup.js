@@ -7,19 +7,19 @@ let handler = async (m, { conn }) => {
         let { min, xp, max } = xpRange(user.level, global.multiplier)
         throw `
 Level *${user.level} (${user.exp - min}/${xp})*
-Kurang *${max - user.exp}* lagi!
+Not enough *${max - user.exp}* again!
 `.trim()
     }
     let before = user.level * 1
     while (canLevelUp(user.level, user.exp, global.multiplier)) user.level++
     if (before !== user.level) {
-        let teks = `Selamat ${conn.getName(m.sender)} naik 🧬level`
+        let teks = `safe ${conn.getName(m.sender)} go on 🧬level`
         let str = `
 ${teks} 
-• 🧬Level Sebelumnya : ${before}
-• 🧬Level Baru : ${user.level}
-• Pada Jam : ${new Date().toLocaleString('id-ID')}
-*_Semakin sering berinteraksi dengan bot Semakin Tinggi level kamu_*
+• 🧬Previous Level : ${before}
+• 🧬New Levels : ${user.level}
+• At what hour : ${new Date().toLocaleString('id-ID', { timeZone: 'Asia/Kolkata' })}
+*_The more you interact with Arctix bots, the higher your level_*
 `.trim()
         try {
             const img = await levelup(teks, user.level)
