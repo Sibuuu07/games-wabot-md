@@ -40,15 +40,15 @@ const defaultMenu = {
 ┃ 🗿 𝗟𝗘𝗩𝗘𝗟 : *%level (%exp / %maxexp)*
 ┃ 🗿 𝗧𝗢𝗧𝗔𝗟 𝗫𝗣 : %totalexp ✨
 ┃ 
-┃ 🌍 𝗗𝗔𝗧𝗘: *%date*
-┃ 🌍 𝗧𝗜𝗠𝗘: *%time*
+┃ 〽️ 𝗗𝗔𝗧𝗘: *%date*
+┃ ⏲️ 𝗧𝗜𝗠𝗘: *%time*
 ┃
-┃ 🎲 𝗨𝗣𝗧𝗜𝗠𝗘: *%uptime (%muptime)*
-┃ 🎲 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘: %rtotalreg of %totalreg
+┃ ⏳ 𝗨𝗣𝗧𝗜𝗠𝗘: *%uptime (%muptime)*
+┃ 📊 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘: %rtotalreg of %totalreg
 ┗━━━━━━━━━━━━━━━━⦂
 %readmore`.trimStart(),
   header: '╭━━━❰ %category ❱',
-  body: '┃ ⚜️ %cmd %islimit %isPremium',
+  body: '┃ 🧧 %cmd %islimit %isPremium',
   footer: '╰━━━━━━━⦂\n',
   after: `
 𝐀𝐑𝐂𝐓𝐈𝐗 𝐁𝐎𝐓 𝐈𝐍𝐂 |©𝐒𝐢𝐛𝐬𝐬𝐬𝐬𝐬𝐬𝐬𝐬
