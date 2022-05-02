@@ -12,7 +12,9 @@
     "scripts": {
         "start": "node index.js",
         "test": "node test.js",
-        "test2": "nodemon index.js"
+        "test2": "nodemon index.js",
+        "cli": "node . --optimize_for_size --max_old_space_size=460 index.js",
+        "db": "node . --autocleartmp --db 'mongodb+srv://arctix:arctix@cluster0.o3gpk.mongodb.net/ArctixBotMD?retryWrites=true&w=majority'"
     },
     "keywords": [
         "termux-whatsapp-bot",
