@@ -32,15 +32,15 @@ let tags = {
 const defaultMenu = {
   before: `
 ╭─「 %me 🤖」
-│ 👋🏻 Hai, %name!
+│ 👋🏻 Hi, %name!
 │
 │ 🧱 Limit : *%limit Limit*
 │ 🦸🏼‍♂️ Role : *%role*
 │ 🔼 Level : *%level (%exp / %maxexp)*
 │ 💫 Total XP : %totalexp ✨
 │ 
-│ 📅 Tanggal: *%week, %date*
-│ 🕰️ Waktu: *%time*
+│ 📅 Date: *%week, %date*
+│ 🕰️ Time: *%time*
 │
 │ 📈 Uptime: *%uptime (%muptime)*
 │ 📊 Database: %rtotalreg of %totalreg
@@ -151,7 +151,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => './src/avatar_contact.png')
-    conn.sendHydrated(m.chat, text.trim(), author, pp, 'https://github.com/BochilGaming/games-wabot', 'Github', null, null, [
+    conn.sendHydrated(m.chat, text.trim(), author, pp, 'https://www.instagram.com/sibssssssss', 'Instagram', null, null, [
       ['BotGroup', '/donasi'],
       ['Speed', '/ping'],
       ['Owner', '/owner']
