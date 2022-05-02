@@ -695,16 +695,16 @@ Untuk mematikan fitur ini, ketik
 
 global.dfail = (type, m, conn) => {
     let msg = {
-        rowner: 'Perintah ini hanya dapat digunakan oleh _*OWWNER!1!1!*_',
-        owner: 'Perintah ini hanya dapat digunakan oleh _*Owner Bot*_!',
-        mods: 'Perintah ini hanya dapat digunakan oleh _*Moderator*_ !',
-        premium: 'Perintah ini hanya untuk member _*Premium*_ !',
-        group: 'Perintah ini hanya dapat digunakan di grup!',
-        private: 'Perintah ini hanya dapat digunakan di Chat Pribadi!',
-        admin: 'Perintah ini hanya untuk *Admin* grup!',
-        botAdmin: 'Jadikan bot sebagai *Admin* untuk menggunakan perintah ini!',
-        unreg: 'Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Manusia.16*',
-        restrict: 'Fitur ini di *disable*!'
+        rowner: 'This command can only bee used by  _*ARCTIX BOT  OWWNER!1!1!*_',
+        owner: 'This command can only be used by _*ARCTIX BOT  Owner*_!',
+        mods: 'This command can only be used by  _*Moderator*_ !',
+        premium: 'This command can only be used by member _*Premium*_ !',
+        group: 'This command can only be used in Groups!',
+        private: 'This command can only be used in Private!',
+        admin: 'Thi command is only for *Admin* grup!',
+        botAdmin: 'Give ARCTIX BOT   *Adminship* to use this command!',
+        unreg: 'Please register to ARCTIX BOT  to use this feature by typing:\n\n*#reg name.age*\n\nExample: *#reg Sibu.18*',
+        restrict: 'This feature *disable*!'
     }[type]
     if (msg) return m.reply(msg)
 }
