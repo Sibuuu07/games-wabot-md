@@ -9,7 +9,6 @@ let tags = {
   'sticker': 'Sticker',
   'kerang': 'Kerang Ajaib',
   'quotes': 'Quotes',
-  'admin': 'Admin',
   'group': 'Group',
   'premium': 'Premium',
   'internet': 'Internet',
@@ -19,35 +18,30 @@ let tags = {
   'tools': 'Tools',
   'fun': 'Fun',
   'database': 'Database',
-  'vote': 'Voting',
-  'absen': 'Absen',
-  'quran': 'Al Qur\'an',
-  'jadibot': 'Jadi Bot',
+  'quran': 'Al',
   'owner': 'Owner',
-  'host': 'Host',
-  'advanced': 'Advanced',
   'info': 'Info',
   '': 'No Category',
 }
 const defaultMenu = {
   before: `
-╭─「 %me 🤖」
-│ 👋🏻 Hai, %name!
+╭─「𝐀𝐑𝐂𝐓𝐈𝐗 𝐁𝐎𝐓」
+│ 👋🏻 Hi, %name!
 │
 │ 🧱 Limit : *%limit Limit*
 │ 🦸🏼‍♂️ Role : *%role*
 │ 🔼 Level : *%level (%exp / %maxexp)*
 │ 💫 Total XP : %totalexp ✨
 │ 
-│ 📅 Tanggal: *%week, %date*
-│ 🕰️ Waktu: *%time*
+│ 📅 Date: *%week, %date*
+│ 🕰️ Time: *%time*
 │
 │ 📈 Uptime: *%uptime (%muptime)*
 │ 📊 Database: %rtotalreg of %totalreg
 ╰────
 %readmore`.trimStart(),
   header: '╭─「 %category 」',
-  body: '│ • %cmd %islimit %isPremium',
+  body: '│ 🧧 %cmd %islimit %isPremium',
   footer: '╰────\n',
   after: `
 *%npmname* | %version
