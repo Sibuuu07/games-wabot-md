@@ -21,7 +21,6 @@ let tags = {
   'quran': 'Al',
   'owner': 'Owner',
   'info': 'Info',
-  '': 'No Category',
 }
 const defaultMenu = {
   before: `
