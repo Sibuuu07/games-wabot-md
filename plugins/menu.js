@@ -60,11 +60,12 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     // Offset    0 is  0.00
     // Offset  420 is  7.00
     let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
-    let week = d.toLocaleDateString(locale, { weekday: 'long' })
+    let week = d.toLocaleDateString(locale, { weekday: 'long' timeZone: 'Asia/Kolkata' })
     let date = d.toLocaleDateString(locale, {
       day: 'numeric',
       month: 'long',
-      year: 'numeric'
+      year: 'numeric',
+      timeZone: 'Asia/Kolkata'
     })
     let dateIslamic = Intl.DateTimeFormat(locale + '-TN-u-ca-islamic', {
       day: 'numeric',
@@ -74,7 +75,8 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     let time = d.toLocaleTimeString(locale, {
       hour: 'numeric',
       minute: 'numeric',
-      second: 'numeric'
+      second: 'numeric',
+      timeZone: 'Asia/Kolkata'
     })
     let _uptime = process.uptime() * 1000
     let _muptime
