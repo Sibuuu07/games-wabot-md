@@ -2,56 +2,58 @@ import { promises } from 'fs'
 import { join } from 'path'
 import { xpRange } from '../lib/levelling.js'
 let tags = {
-  'main': 'Main',
-  'game': 'Game',
-  'rpg': 'RPG Games',
-  'xp': 'Exp & Limit',
-  'sticker': 'Sticker',
-  'kerang': 'Kerang Ajaib',
-  'quotes': 'Quotes',
-  'admin': 'Admin',
-  'group': 'Group',
-  'premium': 'Premium',
-  'internet': 'Internet',
-  'anonymous': 'Anonymous Chat',
-  'nulis': 'MagerNulis & Logo',
-  'downloader': 'Downloader',
-  'tools': 'Tools',
-  'fun': 'Fun',
-  'database': 'Database',
-  'vote': 'Voting',
-  'absen': 'Absen',
-  'quran': 'Al Qur\'an',
-  'jadibot': 'Jadi Bot',
-  'owner': 'Owner',
-  'host': 'Host',
-  'advanced': 'Advanced',
-  'info': 'Info',
+  'main': '𝐀𝐑𝐂𝐓𝐈𝐗𝐁𝐎𝐓𝐌𝐀𝐈𝐍',
+  'game': '𝐆𝐀𝐌𝐄',
+  'rpg': '𝐑𝐏𝐆 𝐆𝐀𝐌𝐃',
+  'xp': '𝐄𝐗𝐏 & 𝐋𝐈𝐌𝐈𝐓𝐒',
+  'sticker': '𝐒𝐓𝐈𝐂𝐊𝐄𝐑',
+  'kerang': '𝐊𝐄𝐑𝐀𝐍𝐆',
+  'quotes': '𝐐𝐔𝐎𝐓𝐄𝐒',
+  'admin': '𝐀𝐃𝐌𝐈𝐌,
+  'group': '𝐆𝐑𝐎𝐔𝐏',
+  'premium': '𝐏𝐑𝐄𝐌𝐈𝐔𝐌',
+  'internet': '𝐈𝐍𝐓𝐄𝐑𝐍𝐄𝐓',
+  'anonymous': '𝐀𝐍𝐎𝐍𝐘𝐌𝐎𝐔𝐒 𝐂𝐇𝐀𝐓',
+  'nulis': '𝐋𝐎𝐆𝐎',
+  'downloader': '𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐑,
+  'tools': '𝐓𝐎𝐎𝐋𝐒',
+  'fun': '𝐅𝐔𝐍',
+  'database': '𝐃𝐀𝐓𝐀𝐁𝐀𝐒𝐄',
+  'vote': '𝐕𝐎𝐓𝐈𝐍𝐆',
+  'absen': '𝐀𝐁𝐒𝐄𝐍',
+  'quran': '𝐀𝐈,
+  'jadibot': '𝐉𝐀𝐃𝐈𝐁𝐎𝐓,
+  'owner': '𝐎𝐖𝐍𝐄𝐑',
+  'host': '𝐇𝐎𝐒𝐓',
+  'advanced': '𝐀𝐃𝐕𝐀𝐍𝐂𝐄𝐃',
+  'info': '𝐈𝐍𝐅𝐎',
   '': 'No Category',
 }
 const defaultMenu = {
   before: `
+╭─━━━❰ 𝐀𝐑𝐂𝐓𝐈𝐗 𝐁𝐎𝐓 𝐈𝐍𝐂❱
+┃ 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 𝐀𝐑𝐂𝐓𝐈𝐗 𝐁𝐎𝐓
+┖━━━━━━━━━━━━━━━⦂
 ╭─「 %me 🤖」
-│ 👋🏻 Hai, %name!
+│ 👋🏻 Hi, %name!
 │
 │ 🧱 Limit : *%limit Limit*
 │ 🦸🏼‍♂️ Role : *%role*
 │ 🔼 Level : *%level (%exp / %maxexp)*
 │ 💫 Total XP : %totalexp ✨
 │ 
-│ 📅 Tanggal: *%week, %date*
-│ 🕰️ Waktu: *%time*
+│ 📅 𝙳𝚊𝚝𝚎: *%week, %date*
+│ 🕰️ 𝚃𝚒𝚖𝚎: *%time*
 │
 │ 📈 Uptime: *%uptime (%muptime)*
 │ 📊 Database: %rtotalreg of %totalreg
 ╰────
 %readmore`.trimStart(),
   header: '╭─「 %category 」',
-  body: '│ • %cmd %islimit %isPremium',
+  body: '│ 🧧 %cmd %islimit %isPremium',
   footer: '╰────\n',
   after: `
-*%npmname* | %version
-${'```%npmdesc```'}
+𝐀𝐑𝐂𝐓𝐈𝐗 𝐁𝐎𝐓 𝐈𝐍𝐂 |©𝐒𝐢𝐛𝐬𝐬𝐬𝐬𝐬𝐬𝐬𝐬
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
@@ -151,10 +153,10 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => './src/avatar_contact.png')
-    conn.sendHydrated(m.chat, text.trim(), author, pp, 'https://github.com/BochilGaming/games-wabot', 'Github', null, null, [
-      ['Donate', '/donasi'],
-      ['Speed', '/ping'],
-      ['Owner', '/owner']
+    conn.sendHydrated(m.chat, text.trim(), author, pp, 'https://www.instagram.com/sibssssssss', '𝙸𝙽𝚂𝚃𝙰𝙶𝚁𝙰𝙼', null, null, [
+      ['𝐁𝐨𝐭 𝐆𝐫𝐨𝐮𝐩', '/donasi'],
+      ['𝐒𝐩𝐞𝐞𝐝', '/ping'],
+      ['𝐎𝐰𝐧𝐞𝐫', '/owner']
     ], m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
