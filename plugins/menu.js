@@ -53,7 +53,8 @@ const defaultMenu = {
   body: '│ 🧧 %cmd %islimit %isPremium',
   footer: '╰────\n',
   after: `
-𝐀𝐑𝐂𝐓𝐈𝐗 𝐁𝐎𝐓 𝐈𝐍𝐂 |©𝐒𝐢𝐛𝐬𝐬𝐬𝐬𝐬𝐬𝐬𝐬
+*%npmname* | %version
+${'```%npmdesc```'}
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
