@@ -6,7 +6,9 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 *── 「 GOOGLE IMAGE 」 ──*
 
 Result from *${text}*
-`.trim(), m)
+`.trim(),[
+['Next', `${usedPrefix}gimage ${text}`]
+], m)
 }
 handler.help = ['gimage <query>', 'image <query>']
 handler.tags = ['internet', 'tools']
