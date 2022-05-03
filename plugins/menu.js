@@ -2,32 +2,32 @@ import { promises } from 'fs'
 import { join } from 'path'
 import { xpRange } from '../lib/levelling.js'
 let tags = {
-  'main': 'Main',
-  'game': 'Game',
-  'rpg': 'RPG Games',
-  'xp': 'Exp & Limit',
-  'sticker': 'Sticker',
-  'kerang': 'Kerang Ajaib',
-  'quotes': 'Quotes',
-  'admin': 'Admin',
-  'group': 'Group',
-  'premium': 'Premium',
-  'internet': 'Internet',
-  'anonymous': 'Anonymous Chat',
-  'nulis': 'MagerNulis & Logo',
-  'downloader': 'Downloader',
-  'tools': 'Tools',
-  'fun': 'Fun',
-  'database': 'Database',
-  'vote': 'Voting',
-  'absen': 'Absen',
-  'quran': 'Al Qur\'an',
-  'jadibot': 'Jadi Bot',
-  'owner': 'Owner',
-  'host': 'Host',
-  'advanced': 'Advanced',
-  'info': 'Info',
-  '': 'No Category',
+  'main': '𝐀𝐑𝐂𝐓𝐈𝐗 𝐁𝐎𝐓 𝐌𝐀𝐈𝐍',
+  'game': '𝐆𝐀𝐌𝐄',
+  'rpg': '𝐑𝐏𝐆 𝐆𝐀𝐌𝐃',
+  'xp': '𝐄𝐗𝐏 & 𝐋𝐈𝐌𝐈𝐓𝐒',
+  'sticker': '𝐒𝐓𝐈𝐂𝐊𝐄𝐑',
+  'kerang': '𝐊𝐄𝐑𝐀𝐍𝐆',
+  'quotes': '𝐐𝐔𝐎𝐓𝐄𝐒',
+  'admin': '𝐀𝐃𝐌𝐈𝐌,
+  'group': '𝐆𝐑𝐎𝐔𝐏',
+  'premium': '𝐏𝐑𝐄𝐌𝐈𝐔𝐌',
+  'internet': '𝐈𝐍𝐓𝐄𝐑𝐍𝐄𝐓',
+  'anonymous': '𝐀𝐍𝐎𝐍𝐘𝐌𝐎𝐔𝐒 𝐂𝐇𝐀𝐓',
+  'nulis': '𝐋𝐎𝐆𝐎',
+  'downloader': '𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐑,
+  'tools': '𝐓𝐎𝐎𝐋𝐒',
+  'fun': '𝐅𝐔𝐍',
+  'database': '𝐃𝐀𝐓𝐀𝐁𝐀𝐒𝐄',
+  'vote': '𝐕𝐎𝐓𝐈𝐍𝐆',
+  'absen': '𝐀𝐁𝐒𝐄𝐍',
+  'quran': '𝐀𝐈,
+  'jadibot': '𝐉𝐀𝐃𝐈𝐁𝐎𝐓,
+  'owner': '𝐎𝐖𝐍𝐄𝐑',
+  'host': '𝐇𝐎𝐒𝐓',
+  'advanced': '𝐀𝐃𝐕𝐀𝐍𝐂𝐄𝐃',
+  'info': '𝐈𝐍𝐅𝐎',
+  '': '𝑵𝑶 𝑪𝑨𝑻𝑬𝑮𝑶𝑹𝒀',
 }
 const defaultMenu = {
   before: `
@@ -52,7 +52,6 @@ const defaultMenu = {
   footer: '╰━━━━━━━⦂\n',
   after: `
 𝐀𝐑𝐂𝐓𝐈𝐗 𝐁𝐎𝐓 𝐈𝐍𝐂 |©𝐒𝐢𝐛𝐬𝐬𝐬𝐬𝐬𝐬𝐬𝐬
-
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
@@ -72,7 +71,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     let date = d.toLocaleDateString(locale, {
       day: 'numeric',
       month: 'long',
-      year: 'numeric'
+      year: 'numeric',
       timeZone: 'Asia/Kolkata'
     })
     let dateIslamic = Intl.DateTimeFormat(locale + '-TN-u-ca-islamic', {
@@ -83,7 +82,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     let time = d.toLocaleTimeString(locale, {
       hour: 'numeric',
       minute: 'numeric',
-      second: 'numeric'
+      second: 'numeric',
       timeZone: 'Asia/Kolkata'
     })
     let _uptime = process.uptime() * 1000
@@ -153,12 +152,12 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => './src/avatar_contact.png')
-    conn.sendHydrated(m.chat, text.trim(), author, pp, 'https://www.instagram.com/sibssssssss', 'Instagram', null, null, [
-      ['BotGroup', '/donasi'],
-      ['Speed', '/ping'],
-      ['Owner', '/owner']
-    ], m)
+    const pp = await conn.profilePictureUrl(conn.user.jid, 'image').catch(_ => './src/avatar_contact.png')
+    conn.sendHydrated(m.chat, text.trim(), author, pp, 'https://www.instagram.com/sibssssssss', 'INSTAGRAM', owner[0][0], 'OWNER', [
+      ['BOTGROUP', '/donasi'],
+      ['SPEED', '/ping'],
+      ['OWNER', '/owner']
+    ], m, { asLocation: 1 })
   } catch (e) {
     conn.reply(m.chat, 'My friend, menu  error', m)
     throw e
@@ -166,7 +165,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
 }
 handler.help = ['menu', 'help', '?']
 handler.tags = ['main']
-handler.command = /^(menu|help|\?)$/i
+handler.command = /^(menu|m|help|\?)$/i
 
 handler.exp = 3
 
